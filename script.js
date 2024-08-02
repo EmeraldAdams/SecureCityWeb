@@ -1,23 +1,9 @@
-<<<<<<< HEAD
-const signUpButton=document.getElementById('signUpButton');
-const signInButton=document.getElementById('signInButton');
-const signInForm=document.getElementById('signIn');
-const signUpForm=document.getElementById('signup');
 
-signUpButton.addEventListener('click',function(){
-    signInForm.style.display="none";
-    signUpForm.style.display="block";
-})
-signInButton.addEventListener('click', function(){
-    signInForm.style.display="block";
-    signUpForm.style.display="none";
-})
-=======
 let map;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: -34.397, lng: 150.644 },
+        center: { lat: -25.8525, lng: 28.1665 },
         zoom: 16,
     });
 
@@ -58,4 +44,27 @@ function handleLocationError(browserHasGeolocation, pos) {
     );
     infoWindow.open(map);
 }
->>>>>>> 6ea3d583bb8742c5b68247a30bce9459d72c511b
+
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("map").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("map").style.marginLeft = "0";
+}
+const signUpButton=document.getElementById('signUpButton');
+const signInButton=document.getElementById('signInButton');
+const signInForm=document.getElementById('signIn');
+const signUpForm=document.getElementById('signup');
+
+signUpButton.addEventListener('click',function(){
+    signInForm.style.display="none";
+    signUpForm.style.display="block";
+})
+signInButton.addEventListener('click', function(){
+    signInForm.style.display="block";
+    signUpForm.style.display="none";
+})
