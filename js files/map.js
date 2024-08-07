@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const signUpButton=document.getElementById('signUpButton');
 const signInButton=document.getElementById('signInButton');
 const signInForm=document.getElementById('signIn');
@@ -12,7 +11,6 @@ signInButton.addEventListener('click', function(){
     signInForm.style.display="block";
     signUpForm.style.display="none";
 })
-=======
 let map;
 
 function initMap() {
@@ -58,4 +56,14 @@ function handleLocationError(browserHasGeolocation, pos) {
     );
     infoWindow.open(map);
 }
->>>>>>> 6ea3d583bb8742c5b68247a30bce9459d72c511b
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("map").style.marginLeft = "250px";
+  }
+  
+  /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("map").style.marginLeft = "0";
+  }

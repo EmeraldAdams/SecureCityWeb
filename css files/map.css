@@ -17,3 +17,78 @@ body, html {
     width: 100vh;
     height: 100vh;
 }
+/* Header styling */
+.header {
+    display: flex;
+    align-items: center;
+    background: #001D3D;
+    color: #fff;
+    padding: 0 20px;
+    height: 64px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+/* Menu button styling */
+.menu-button {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: auto; /* Moves the menu button to the left */
+}
+
+/* Title styling */
+.header-title {
+    font-size: 1.8rem;
+    margin-left: auto; /* Moves the title to the right */
+}
+
+/* Side navigation styling */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.nav-heading{
+    height: 200px;
+    background-color: #001D3D;
+    color: #f1f1f1;
+}
+.sidenav .nav-heading {
+    padding: 16px 32px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.sidenav a {
+    padding: 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+#map {
+    transition: margin-left 0.5s;
+}

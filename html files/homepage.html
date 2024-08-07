@@ -1,17 +1,31 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure City</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="script.js"></script>
-    <script async 
-       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA11jZevZZ0GPLRmM0SLaMF-BmZDqhNJwU&loading=async&callback=initMap"></script>
+    <link rel="stylesheet" type="text/css" href="map.css">
+    <script src="map.js"></script>
+    <script src="firebaseauth.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA11jZevZZ0GPLRmM0SLaMF-BmZDqhNJwU&loading=async&callback=initMap" defer></script>
 </head>
-<body>                                                                                             
-    <div id="map">
-       <h1>Google Maps</h1> 
+<body>
+    <header class="header">
+        <span id="button_menu" class="menu-button" onclick="openNav()">&#9776;</span>
+        <h1 class="header-title">Secure City</h1>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h2 class="nav-heading">Hi User</h2>
+        <a href="homepage.html">Home</a>
+        <a href="Analytics.html">Analytics</a>
+        <a href="Alerts.html">Alerts</a>
+        <a href="profile.html">Profile</a>
     </div>
     
+    <div id="map">
+        <h1>Google Maps</h1>
+    </div>
 </body>
 </html>
