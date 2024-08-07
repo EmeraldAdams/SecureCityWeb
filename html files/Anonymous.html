@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Messages | Firebase</title>
+    <link rel="stylesheet" type="text/css" href="/css files/anonymous.css">
+    <script src="/js files/anonymous.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" id="contactForm">
+            <div class="alert">Your message sent</div>
+
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#">Theft </a>
+                  <a href="#">Hijacking 2</a>
+                  <a href="#">Abuse 3</a>
+                  <a href="#">Other 3</a>
+                </div>
+            </div>
+
+            <div class="inputBox">
+                <input type="text"" id="locationId" placeholder="Select Location....." />
+            </div>
+
+            <div class="inputBox">
+                <textarea id="msgContent" cols="100" rows="10" placeholder="Message"></textarea>
+            </div>
+
+            <div class="inputBox">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="./mail.js"></script>
+</body>
+
+</html>

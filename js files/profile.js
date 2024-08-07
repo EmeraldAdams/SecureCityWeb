@@ -58,3 +58,24 @@ onAuthStateChanged(auth, (user)=>{
         console.error('Error Signing out:', error);
     })
   })
+
+  // Add event listeners for redirect buttons
+document.querySelectorAll('.redirect-box').forEach((button, index) => {
+    button.addEventListener('click', () => {
+        switch (index) {
+            case 0:
+                window.location.href = '/html files/my-profile.html';
+                break;
+            case 1:
+                window.location.href = '/html files/anonymous-tip.html';
+                break;
+            case 2:
+                window.location.href = '/html files/my-routes.html';
+                break;
+            case 3:
+                window.location.href = '/html files/share-app.html';
+                break;
+        }
+    });
+});
+
