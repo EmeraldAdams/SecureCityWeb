@@ -2,7 +2,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
   import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js"
-  import {getFirestore, setDoc, doc} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"
+  import {getFirestore, setDoc, doc, getDocs,query, orderBy, startAfter, limit} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,6 +24,7 @@
 //Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const db =getFirestore(app);
 
 function showMessage(message, divId){
   var messageDiv = document.getElementById(divId);
@@ -100,3 +101,4 @@ signIn.addEventListener('click', (event)=>{
     }
   })
 })
+
