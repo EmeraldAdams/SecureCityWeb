@@ -117,15 +117,16 @@ function handleLocationError(browserHasGeolocation, pos) {
   infoWindow.open(map);
 }
 
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("map").style.marginLeft = "250px";
-}
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("map").style.marginLeft = "250px";
+        }
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0px";
-  document.getElementById("map").style.marginLeft = "0px";
-}
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("map").style.marginLeft = "0";
+            document.getElementById("controls-container").style.marginLeft = "0";
+        }
 
 window.initMap = initMap;
 

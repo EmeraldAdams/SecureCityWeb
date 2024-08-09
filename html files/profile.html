@@ -3,15 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="/css files/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="module" src="/js files/profile.js"></script>
 </head>
 <body>
-    <h1>Welcome to the Homepage</h1>
+    <header class="header">
+        <h1>Secure City</h1>
+        <input type="text" placeholder="Area">
+        <button class="filter-btn">Filters</button>
+    </header>
+
+    <div class="profile-container">
+        <div class="profile-box">
+            <h2>My Account</h2>
+            <img src="/pictures/profile-pic.png" alt="User image" class="profile-pic">
+            <h3>
+                <span id="loggedUserFName"></span>
+                <span id="loggedUserLName"></span>
+            </h3>
+        </div>
+    </div>
+
+    <div class="redirects-container">
+        <a href="Edit-profile.html">
+            <button class="redirect-box">
+                <i class="fa-solid fa-user"></i>               
+                <h3>Edit Profile</h3>
+            </button>
+        </a>
+        <a href="Anonymous.html">
+            <button class="redirect-box">
+                <i class="fa-solid fa-circle-exclamation"></i>              
+                <h3>Anonymous Tip</h3>
+            </button>
+        </a>
+        <a href="myRoutes.html">
+            <button class="redirect-box">
+                <i class="fa-solid fa-route"></i> 
+               <h3>My Routes</h3>
+            </button>
+        </a>
+            <button class="redirect-box">
+                <i class="fa-solid fa-share"></i>
+                <h3>Share</h3>
+            </button>
+        </a>
+        
+    </div>
+
+    <!----
+    <div class="container">
+        <h1>Welcome to the Homepage</h1>
     <div>First Name: <span id="loggedUserFName"></span></div>
     <div>Last Name: <span id="loggedUserLName"></span></div>
     <div>Email: <span id="loggedUserEmail"></span></div>
     <button id="logout">Logout</button>
+    </div>
+        
+-->
     
 </body>
 </html>

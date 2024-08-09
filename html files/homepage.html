@@ -3,10 +3,14 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure City</title>
+    <link rel="stylesheet" type="text/css" href="/css files/map.css">
+    <script  src="/js files/map.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=[api-key]&loading=async&callback=initMap&libraries=places,visualization" defer></script>
+
     <link rel="stylesheet" type="text/css" href="/css files/homepage.css">
     <script  src="/js files/homepage.js"></script>
     <script src="/js files/analytics.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYe_VaGTzugCcDDtn4KQjoblLR6yuK1Pk&loading=async&callback=initMap&libraries=places,visualization" defer></script>
+    
     
     
 </head>
@@ -14,7 +18,11 @@
     <header class="header">
         <span id="button_menu" class="menu-button" onclick="openNav()">&#9776;</span>
         <h1 class="header-title">Secure City</h1>
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box" />  
+    </header>
+
+    <!-- Controls below the header -->
+    <div class="controls-container">
+        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
         <div class="buttons">
             <div class="category-dropdown">
                 <button onclick="toggleDropdown('categories-names')" class="dropdown-btn">Crime Type</button>
@@ -38,19 +46,14 @@
             </div>
         </div>
     </header>
-    
-    
-    <div id="mySideNav" class="sidenav">
-        <div id="header-nav"> 
-            Hi user
-            
-        </div>
-        <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
-        <a href="homepage.html" >Home</a>
-        <a href="Analytics.html" >Analytics</a>
-        <a href="profile.html" >Profile</a>
-        <a href="Alerts.html" >Alerts</a>
-      </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h2 class="nav-heading">Hi User</h2>
+        <a href="homepage.html">Home</a>
+        <a href="Analytics.html">Analytics</a>
+        <a href="Alerts.html">Alerts</a>
+        <a href="profile.html">Profile</a>
+    </div>
     <div id="map"></div>
 </body>
 </html>
