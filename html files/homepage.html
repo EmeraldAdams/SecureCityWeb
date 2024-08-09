@@ -3,14 +3,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure City</title>
-    <link rel="stylesheet" type="text/css" href="/css files/map.css">
-    <script  src="/js files/map.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=[api-key]&loading=async&callback=initMap&libraries=places,visualization" defer></script>
-
     <link rel="stylesheet" type="text/css" href="/css files/homepage.css">
-    <script src="/js files/homepage.js"></script>
-    <script async 
-       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA11jZevZZ0GPLRmM0SLaMF-BmZDqhNJwU&loading=async&callback=initMap"></script>
+    <script  src="/js files/homepage.js"></script>
+    <script src="/js files/analytics.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYe_VaGTzugCcDDtn4KQjoblLR6yuK1Pk&loading=async&callback=initMap&libraries=places,visualization" defer></script>
+    
+    
 </head>
 <body>
     <header class="header">
@@ -31,23 +29,28 @@
             <div class="date-dropdown">
                 <button onclick="toggleDropdown('date-names')" class="dropdown-btn">Date of Crime</button>
                 <div id="date-names" class="dropdown-content">
-                    <a href="#">d1</a>
-                    <a href="#">d2</a>
-                    <a href="#">d3</a>
-                    <a href="#">d4</a>
-                    <a href="#">d5</a>
+                    <a href="#">This Week</a>
+                    <a href="#">Last week</a>
+                    <a href="#">Two Weeks ago</a>
+                    <a href="#">Three weeks ago</a>
+                    <a href="#">This month</a>
                 </div>
             </div>
         </div>
     </header>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <h2 class="nav-heading">Hi User</h2>
-        <a href="homepage.html">Home</a>
-        <a href="Analytics.html">Analytics</a>
-        <a href="Alerts.html">Alerts</a>
-        <a href="profile.html">Profile</a>
-    </div>
+    
+    
+    <div id="mySideNav" class="sidenav">
+        <div id="header-nav"> 
+            Hi user
+            
+        </div>
+        <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+        <a href="homepage.html" >Home</a>
+        <a href="Analytics.html" >Analytics</a>
+        <a href="profile.html" >Profile</a>
+        <a href="Alerts.html" >Alerts</a>
+      </div>
     <div id="map"></div>
 </body>
 </html>

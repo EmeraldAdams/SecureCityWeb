@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>ana</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css files/analytics.css">
+    
+
+
+  </head>
+  <body>
+    <div class="grid-container">
+
+      <!-- Header -->
+      <header class="header">
+        <div class="menu-icon" >
+          <span class="material-icons-outlined" onclick="openNav()">menu</span>
+          
+        </div>
+        <div class="header-left">
+            <input id="placeSearch" class="controls" type="text" placeholder="Search Box" />    
+            <button id="searchButton">Search</button>
+        </div>
+        <div class="header-right">
+          <h1>Secure City</h1>
+        </div>
+      </header>
+
+      </div>
+
+      <!--Naviagtion bar-->
+      <div id="mySideNav" class="sidenav">
+        <div id="header-nav"> 
+            Hi user
+            
+        </div>
+        <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+        <a href="homepage.html" >Home</a>
+        <a href="Analytics.html" >Analytics</a>
+        <a href="profile.html" >Profile</a>
+        <a href="Alerts.html" >Alerts</a>
+      </div>
+      <div id="main">
+        <div class="card">
+            <div class="card-inner">
+              <h3>Total Crimes</h3>
+              <div class="dropdown">
+                <button class="dropbtn">Date</button>
+                <div class="dropdown-content">
+                  <button id="thisWeek">This week</button>
+                  <button id="lastWeek">Last week</button>
+                  <button id="twoWeeksAgo">Two weeks ago</button>
+                  <button id="thisMonth">This month</button>
+                  <button id="twoMonthsAgo">Two months ago</button>
+                </div>
+              </div>
+            </div>
+            <h1 id="TotalCrimes">filler number </h1>
+          </div>
+        <div class="card">
+          <div class="card-inner">
+            <h3>Highest Crime</h3>
+            <div class="dropdown">
+              <button class="dropbtn">Date</button>
+              <div class="dropdown-content">
+                <button id="thisWeek">This week</button>
+                <button id="lastWeek">Last week</button>
+                <button id="twoWeeksAgo">Two weeks ago</button>
+                <button id="thisMonth">This month</button>
+                <button id="twoMonthsAgo">Two months ago</button>
+              </div>
+            </div>
+          </div>
+          <h1 id="mostCrimeCategory">Category: </h1>
+          <h1 id="numberOfCrimes">Number of Crimes: </h1>
+        </div>
+        
+        <div class="card">
+            <div class="card-inner">
+              <h3>Categories of crime</h3>
+              <div class="dropdown">
+                <button class="dropbtn">Category</button>
+                <div class="dropdown-content" id="categoryDropdown">
+                  
+                </div>
+              </div>
+            </div>
+            <h1 id="Category">Category: </h1>
+            <h1 id="TotalCrimes">Number of Crimes: </h1>
+          </div>
+          <div class="card">
+            <div class="card-inner">
+              <h3>Predicted Crimes</h3>
+              <div class="dropdown">
+                <button class="dropbtn">Date</button>
+                <div class="dropdown-content" id="categoryDropdown">
+                    <button id="thisWeek">Next Week</button>
+                    <button id="lastWeek">Next Two week</button>
+                    <button id="twoWeeksAgo">Next Three weeks</button>
+                    <button id="thisMonth">Next Month</button>
+                    <button id="twoMonthsAgo">TNext two months</button>
+                </div>
+              </div>
+            </div>
+            <h1 id="Category">Category: </h1>
+            <h1 id="TotalCrimes">Number of Crimes: </h1>
+          </div>
+          
+          </div>
+          <div class="charts">
+
+            <div class="charts-card">
+              <h2 class="chart-title">Crime Trends</h2>
+              <div id="bar-chart"></div>
+            </div>
+    
+            <div class="charts-card">
+              <h2 class="chart-title">Predicted Crimes</h2>
+              <div id="area-chart"></div>
+            </div>
+          
+    
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+      <script src="/js files/analytics.js"></script>
+    
+       <script type="module" src="/js files/firebaseauth.js"></script>
+      
+      
+
+
+
+  </body>
+  </html>
+
