@@ -17,7 +17,7 @@ const barChartOptions = {
     series: [
       {
         data: [10, 8, 6, 4, 2],
-        name: 'Products',
+        name: 'Crime Trends',
       },
     ],
     chart: {
@@ -74,7 +74,7 @@ const barChartOptions = {
       theme: 'dark',
     },
     xaxis: {
-      categories: ['Laptop', 'Phone', 'Monitor', 'Headphones', 'Camera'],
+      categories: ['Theft', 'Murder', 'Sexual Offense', 'Drug-related Crimes', 'Burgarlary'],
       title: {
         style: {
           color: '#f5f7ff',
@@ -127,11 +127,11 @@ const barChartOptions = {
   const areaChartOptions = {
     series: [
       {
-        name: 'Purchase Orders',
+        name: 'Predicted Crimes',
         data: [31, 40, 28, 51, 42, 109, 100],
       },
       {
-        name: 'Sales Orders',
+        name: 'Theft',
         data: [11, 32, 45, 32, 34, 52, 41],
       },
     ],
@@ -206,7 +206,7 @@ const barChartOptions = {
     yaxis: [
       {
         title: {
-          text: 'Purchase Orders',
+          text: 'Murder',
           style: {
             color: '#f5f7ff',
           },

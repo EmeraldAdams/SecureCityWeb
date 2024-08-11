@@ -3,57 +3,54 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure City</title>
-    <link rel="stylesheet" type="text/css" href="/css files/map.css">
-    <script  src="/js files/map.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=[api-key]&loading=async&callback=initMap&libraries=places,visualization" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="/css files/homepage.css">
-    <script  src="/js files/homepage.js"></script>
-    <script src="/js files/analytics.js"></script>
-    
-    
     
 </head>
 <body>
     <header class="header">
-        <span id="button_menu" class="menu-button" onclick="openNav()">&#9776;</span>
-        <h1 class="header-title">Secure City</h1>
+        <header class="header">
+            <div class="menu-icon" >
+              <span class="material-icons-outlined" onclick="openNav()">menu</span>
+              
+            </div>
+            <div class="header-left">
+                <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            </div>
+            <div class="header-right">
+                <h1>Secure City</h1>
+              </div>
+        
+        
     </header>
-
-    <!-- Controls below the header -->
-    <div class="controls-container">
-        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div class="buttons">
-            <div class="category-dropdown">
-                <button onclick="toggleDropdown('categories-names')" class="dropdown-btn">Crime Type</button>
-                <div id="categories-names" class="dropdown-content">
-                    <a href="#">C1</a>
-                    <a href="#">C2</a>
-                    <a href="#">C3</a>
-                    <a href="#">C4</a>
-                    <a href="#">C5</a>
-                </div>
-            </div>
-            <div class="date-dropdown">
-                <button onclick="toggleDropdown('date-names')" class="dropdown-btn">Date of Crime</button>
-                <div id="date-names" class="dropdown-content">
-                    <a href="#">This Week</a>
-                    <a href="#">Last week</a>
-                    <a href="#">Two Weeks ago</a>
-                    <a href="#">Three weeks ago</a>
-                    <a href="#">This month</a>
-                </div>
-            </div>
+    <div id="mySideNav" class="sidenav">
+        <div id="header-nav"> 
+            Hi user
+            
         </div>
-    </header>
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <h2 class="nav-heading">Hi User</h2>
-        <a href="homepage.html">Home</a>
-        <a href="Analytics.html">Analytics</a>
-        <a href="Alerts.html">Alerts</a>
-        <a href="profile.html">Profile</a>
+        <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+        <a href="homepage.html" >Home</a>
+        <a href="Analytics.html" >Analytics</a>
+        <a href="profile.html" >Profile</a>
+        <a href="Alerts.html" >Alerts</a>
+        <a href="myRoutes.html" >Routes</a>
+        <a href="login.html" >Login</a>
+      </div>
+
+   
+
+    
+    <div id="map">
+
     </div>
-    <div id="map"></div>
+   
+    
+    <script src="/js files/homepage.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYe_VaGTzugCcDDtn4KQjoblLR6yuK1Pk&libraries=places,visualization&callback=initMap" defer></script>
 </body>
 </html>

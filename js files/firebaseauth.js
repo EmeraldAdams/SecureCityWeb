@@ -1,7 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -13,87 +12,12 @@ const firebaseConfig = {
   appId: "1:267431261000:web:1f8a48659bbc25ade3b97d",
   measurementId: "G-MBFG6CEYW1"
 };
-function showMessage(message, divId){
-  var messageDiv = document.getElementById(divId);
-  messageDiv.style.display="block";
-  messageDiv.innerHTML=message;
-  messageDiv.style.opacity=1;
-  setTimeout(function(){
-    messageDiv.style.opacity = 0;
-  },5000);
-}
-
-
-const signup = document.getElementById('submitSignUp');
-signup.addEventListener('click', (event)=>{
-    event.preventDefault();
-    const email=document.getElementById('rEmail').value;
-    const password = document.getElementById('rPassword').value;
-    const firstName = document.getElementById('fName').value;
-    const lastName = document.getElementById('lName').value;
-    
-    const auth = getAuth();
-    const db = getFirestore();
-
-    createUserWithEmailAndPassword(auth,email,password)
-    .then((userCredential)=>{
-        const user = userCredential.user;
-        const userData={
-            email: email,
-            firstName: firstName,
-            lastName: lastName
-        };
-        showMessage('Account Created Succrdfully', 'signUpMessage');
-        const docRef= doc(db, "users", user.uid)
-        setDoc(docRef, userData)
-        .then(()=>{
-          window.location.href = 'login.html';
-        })
-        .catch((error)=>{
-          console.error("")
-        });
-    })
-    .catch((error)=>{
-      const errorCode = error.code;
-      if(errorCode== 'auth/email-already-in-use'){
-        showMessage('Email Address Already Exists !!!', 'signUpMessage');
-      }
-      else{
-        showMessage('unable to create User', 'signUpMessage');
-      }
-    })
-});
-
-const signIn = document.getElementById('submitSignIn');
-signIn.addEventListener('click', (event)=>{
-  event.preventDefault();
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
-  const auth = getAuth();
-
-  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential)=>{
-    showMessage('login is successful', 'signInMessage');
-    const user = userCredential.user;
-    localStorage.setItem('loggedInUserId', user.uid);
-    window.location.href = '/html files/homepage.html';
-  })
-  .catch((error)=>{
-    const errorCode = error.code;
-    if(errorCode === 'auth/invalid-credential'){
-      showMessage('Incorrect Email or Password', 'signInMessage')
-    }
-    else{
-      showMessage('Account does not Exist', 'signInMessage')
-    }
-  })
-})
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-let fetchedData = {};  // Store fetched data
+let fetchedData = [];  // Store fetched data
 
 // Date ranges for button functionality
 const dateRanges = {
@@ -103,27 +27,6 @@ const dateRanges = {
   "thisMonth": ["2012-2013"],
   "twoMonthsAgo": ["2011-2012"]
 };
-
-// Function to display the category with the most crimes for the selected date range
-function displayMostCrimes(dateRangeKey) {
-  const dateRange = dateRanges[dateRangeKey];
-  if (!dateRange || !fetchedData) return;
-
-  let maxCategory = "";
-  let maxCrimes = 0;
-
-  for (const data of fetchedData) {
-    dateRange.forEach((date) => {
-      if (data[date] > maxCrimes) {
-        maxCrimes = data[date];
-        maxCategory = data.Category;
-      }
-    });
-  }
-
-  document.getElementById("mostCrimeCategory").innerText = `Category: ${maxCategory}`;
-  document.getElementById("numberOfCrimes").innerText = `Number of Crimes: ${maxCrimes}`;
-}
 
 // Event listener for the search button
 document.addEventListener('DOMContentLoaded', () => {
@@ -139,8 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
           const querySnapshot = await getDocs(q);
 
           if (!querySnapshot.empty) {
-            fetchedData = querySnapshot.docs.map(doc => doc.data());
-            console.log('Data fetched:', fetchedData);
+            // Process and filter fetched data
+            fetchedData = querySnapshot.docs.map(doc => {
+              const data = doc.data();
+              let filteredData = { Category: data.Category };
+              for (const dateRange of Object.values(dateRanges)) {
+                dateRange.forEach(date => {
+                  if (data.hasOwnProperty(date)) {
+                    filteredData[date] = data[date];
+                  }
+                });
+              }
+              return filteredData;
+            });
+            console.log('Filtered Data fetched:', fetchedData);
           } else {
             console.log("No data found for this place");
           }
@@ -171,12 +86,71 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error(`Button for ${key} not found`);
     }
   }
+
+  const totalDateButtons = {
+    "thisWeek": document.getElementById("totalThisWeek"),
+    "lastWeek": document.getElementById("totalLastWeek"),
+    "twoWeeksAgo": document.getElementById("totalTwoWeeksAgo"),
+    "thisMonth": document.getElementById("totalThisMonth"),
+    "twoMonthsAgo": document.getElementById("totalTwoMonthsAgo")
+  };
+
+  for (const [key, button] of Object.entries(totalDateButtons)) {
+    if (button) {
+      button.addEventListener("click", () => displayTotalCrimes(key));
+    } else {
+      console.error(`Button for ${key} not found`);
+    }
+  }
 });
 
-//Populate crime categories
+// Function to display the category with the most crimes for the selected date range
+function displayMostCrimes(dateRangeKey) {
+  const dateRange = dateRanges[dateRangeKey];
+  if (!dateRange || !Array.isArray(fetchedData) || fetchedData.length === 0) return;
+
+  let maxCategory = "";
+  let maxCrimes = 0;
+
+  for (const data of fetchedData) {
+    dateRange.forEach((date) => {
+      if (data[date] > maxCrimes) {
+        maxCrimes = data[date];
+        maxCategory = data.Category;
+      }
+    });
+  }
+
+  document.getElementById("mostCrimeCategory").innerText = `Category: ${maxCategory}`;
+  document.getElementById("numberOfCrimes").innerText = `Number of Crimes: ${maxCrimes}`;
+}
+
+// Function to calculate total crimes for the selected date range
+function calculateTotalCrimesForDateRange(dateRangeKey) {
+  const dateRange = dateRanges[dateRangeKey];
+  if (!dateRange || !Array.isArray(fetchedData) || fetchedData.length === 0) return 0;
+
+  let totalCrimes = 0;
+
+  for (const data of fetchedData) {
+    dateRange.forEach((date) => {
+      totalCrimes += (data[date] || 0);
+    });
+  }
+
+  return totalCrimes;
+}
+
+// Function to display total crimes for the selected date range
+function displayTotalCrimes(dateRangeKey) {
+  const totalCrimes = calculateTotalCrimesForDateRange(dateRangeKey);
+  document.getElementById("totalCrimesNumber").innerText = totalCrimes;
+}
+
+// Populate crime categories
 const categoryDropdown = document.getElementById("categoryDropdown");
 
-try{
+try {
   const q = query(collection(db, "CrimeStatitics_read"));
   const querySnapshot = await getDocs(q);
 
@@ -185,11 +159,10 @@ try{
 
   // Iterate through documents to extract unique categories
   querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      categoriesSet.add(data.Category);
+    const data = doc.data();
+    categoriesSet.add(data.Category);
   });
 
-  // Convert Set to Array and create dropdown items
   // Convert Set to Array and create dropdown items
   const categoriesArray = Array.from(categoriesSet);
   categoriesArray.forEach(category => {
@@ -207,7 +180,7 @@ try{
   console.log("Error fetching categories:", error);
 }
 
-//categories
+// Function to calculate total crimes for a specific category
 function calculateTotalCrimesForCategory(selectedCategory) {
   let totalCrimes = 0;
 
@@ -221,5 +194,27 @@ function calculateTotalCrimesForCategory(selectedCategory) {
     }
   }
 
+  return totalCrime;
+}
+
+
+function calculateTotalCrimesForDateRangeRegardlessOfCategory(dateRangeKey) {
+  const dateRange = dateRanges[dateRangeKey];
+  if (!dateRange || !Array.isArray(fetchedData) || fetchedData.length === 0) return 0;
+
+  let totalCrimes = 0;
+
+  for (const data of fetchedData) {
+    dateRange.forEach((date) => {
+      totalCrimes += (data[date] || 0);
+    });
+  }
+
   return totalCrimes;
+}
+
+// Function to display total crimes regardless of category for the selected date range
+function displayTotalCrimesRegardlessOfCategory(dateRangeKey) {
+  const totalCrimes = calculateTotalCrimesForDateRangeRegardlessOfCategory(dateRangeKey);
+  document.getElementById("firstCardTotal").innerText = totalCrimes;
 }

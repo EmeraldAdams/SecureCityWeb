@@ -38,7 +38,8 @@
       </div>
 
       <!--Naviagtion bar-->
-      <div id="mySideNav" class="sidenav">
+    </header>
+    <div id="mySideNav" class="sidenav">
         <div id="header-nav"> 
             Hi user
             
@@ -48,7 +49,10 @@
         <a href="Analytics.html" >Analytics</a>
         <a href="profile.html" >Profile</a>
         <a href="Alerts.html" >Alerts</a>
+        <a href="myRoutes.html" >Routes</a>
+        <a href="login.html" >Login</a>
       </div>
+         
       <div id="main">
         <div class="card">
             <div class="card-inner">
@@ -56,15 +60,16 @@
               <div class="dropdown">
                 <button class="dropbtn">Date</button>
                 <div class="dropdown-content">
-                  <button id="thisWeek">This week</button>
-                  <button id="lastWeek">Last week</button>
-                  <button id="twoWeeksAgo">Two weeks ago</button>
-                  <button id="thisMonth">This month</button>
-                  <button id="twoMonthsAgo">Two months ago</button>
+                  <button id="totalThisWeek" onclick="displayTotalCrimesRegardlessOfCategory('thisWeek')">This week</button>
+        <button id="totalLastWeek" onclick="displayTotalCrimesRegardlessOfCategory('lastWeek')">Last week</button>
+        <button id="totalTwoWeeksAgo" onclick="displayTotalCrimesRegardlessOfCategory('twoWeeksAgo')">Two weeks ago</button>
+        <button id="totalThisMonth" onclick="displayTotalCrimesRegardlessOfCategory('thisMonth')">This month</button>
+        <button id="totalTwoMonthsAgo" onclick="displayTotalCrimesRegardlessOfCategory('twoMonthsAgo')">Two months ago</button>
+
                 </div>
               </div>
             </div>
-            <h1 id="TotalCrimes">filler number </h1>
+            <h1 id="firstCardTotal"> </h1>
           </div>
         <div class="card">
           <div class="card-inner">
@@ -103,11 +108,11 @@
               <div class="dropdown">
                 <button class="dropbtn">Date</button>
                 <div class="dropdown-content" id="categoryDropdown">
-                    <button id="thisWeek">Next Week</button>
-                    <button id="lastWeek">Next Two week</button>
-                    <button id="twoWeeksAgo">Next Three weeks</button>
-                    <button id="thisMonth">Next Month</button>
-                    <button id="twoMonthsAgo">TNext two months</button>
+                    <button >Next Week</button>
+                    <button >Next Two week</button>
+                    <button >Next Three weeks</button>
+                    <button >Next Month</button>
+                    <button >TNext two months</button>
                 </div>
               </div>
             </div>
