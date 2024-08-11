@@ -5,15 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" type="text/css" href="/css files/profile.css">
+    <link rel="stylesheet" type="text/css" href="/css files/analytics.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
     <script type="module" src="/js files/profile.js"></script>
+    <script src="/js files/analytics.js"></script>
+
+   
 </head>
 <body>
     <header class="header">
-        <h1>Secure City</h1>
-        <input type="text" placeholder="Area">
-        <button class="filter-btn">Filters</button>
-    </header>
+        <div class="menu-icon" >
+          <span class="material-icons-outlined" onclick="openNav()">menu</span>
+          
+        </div>
+        <div class="header-left">
+            <input id="placeSearch" class="controls" type="text" placeholder="Search Box" />    
+            <button id="searchButton">Search</button>
+        </div>
+        <div class="header-right">
+          <h1>Secure City</h1>
+        </div>
+        <div id="mySideNav" class="sidenav">
+            <div id="box-sidenav">
+              <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+              <a href="homepage.html" >Home</a>
+              <a href="Analytics.html" >Analytics</a>
+              <a href="profile.html" >Profile</a>
+              <a href="Alerts.html" >Alerts</a>
+              <a href="myRoutes.html" >Routes</a>
+              <a href="login.html" >Login</a>
+    
+      </header>
+   
+        </div>
 
     <div class="profile-container">
         <div class="profile-box">

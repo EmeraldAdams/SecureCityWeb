@@ -50,9 +50,11 @@ body {
 
 /*navigation code*/
 #header-nav {
-    background-color: white;
+    background-color: #002A5A;
     height: 60px;
+    top:0;
 }
+
 
 .sidenav {
     height: 100%;
@@ -71,24 +73,24 @@ body {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #fff;
     display: block;
     transition: 0.3s;
 }
 
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: #FFC300;
 }
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    right: 20px; /* Move the button to the right */
+    font-size: 40px; /* Adjust the size */
+    margin-left: 0; /* Remove the margin-left to keep it in place */
+    cursor: pointer; /* Change the cursor to a pointer on hover */
 }
-
 #main {
     transition: margin-left .5s;
     padding: 20px;
@@ -218,8 +220,8 @@ body {
   }
   
   #searchButton {
-    background-color: #2962ff; /* Button background color */
-    color: white; /* Text color */
+    background-color: white; /* Button background color */
+    color: #002A5A; /* Text color */
     border: none; /* Remove border */
     padding: 10px 20px; /* Add some padding */
     border-radius: 25px; /* Round the corners */
@@ -230,11 +232,13 @@ body {
   }
 
   #searchButton:hover {
-    background-color: #0039cb; /* Darker blue on hover */
+    background-color:#002A5A;
+    color:white; /* Darker blue on hover */
   }
 
   #searchButton:active {
-    background-color: #0026a7; /* Even darker blue on click */
+    background-color: white; 
+    color:#002A5A;/* Even darker blue on click */
   }
 
   /* Style the input box next to the button */

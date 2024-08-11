@@ -8,9 +8,40 @@
     <title>Contact Messages | Firebase</title>
     <link rel="stylesheet" type="text/css" href="/css files/anonymous.css">
     <script src="/js files/anonymous.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css files/analytics.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
+   
+    <script src="/js files/analytics.js"></script>
 </head>
 
 <body>
+  <header class="header">
+    <div class="menu-icon" >
+      <span class="material-icons-outlined" onclick="openNav()">menu</span>
+      
+    </div>
+    <div class="header-left">
+        <input id="placeSearch" class="controls" type="text" placeholder="Search Box" />    
+        <button id="searchButton">Search</button>
+    </div>
+    <div class="header-right">
+      <h1>Secure City</h1>
+    </div>
+    <div id="mySideNav" class="sidenav">
+        <div id="box-sidenav">
+          <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+          <a href="homepage.html" >Home</a>
+          <a href="Analytics.html" >Analytics</a>
+          <a href="profile.html" >Profile</a>
+          <a href="Alerts.html" >Alerts</a>
+          <a href="myRoutes.html" >Routes</a>
+          <a href="login.html" >Login</a>
+        </div>
+  </header>
         <form action="Anonymous.html" method="post">
           <fieldset>
             <legend>Report Information</legend>

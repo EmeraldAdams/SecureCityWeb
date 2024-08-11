@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure City</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css files/myroutes.css">
+    
+</head>
+<body>
+    <header class="header">
+        <header class="header">
+            <div class="menu-icon" >
+              <span class="material-icons-outlined" onclick="openNav()">menu</span>
+              
+            </div>
+            <div class="header-left">
+                <input id="pac-input" class="controls" type="text" placeholder="Enter Current Location">
+                
+            </div>
+            <div class="header-left">
+                <input id="pac-input" class="controls" type="text" placeholder="Enter Type of crime">
+                
+                
+            </div>
+            <div class="header-right">
+                <h1>Secure City</h1>
+              </div>
+        
+        
+    </header>
+    <div id="mySideNav" class="sidenav">
+        <div id="header-nav"> 
+            Hi user
+            
+        </div>
+        <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+        <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+        <a href="homepage.html" >Home</a>
+        <a href="Analytics.html" >Analytics</a>
+        <a href="profile.html" >Profile</a>
+        <a href="Alerts.html" >Alerts</a>
+        <a href="myRoutes.html" >Routes</a>
+        <a href="login.html" >Login</a>
+      </div>
+
+   
+
+    
+    <div id="map">
+
+    </div>
+   
+    
+    <script src="/js files/myroute.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYe_VaGTzugCcDDtn4KQjoblLR6yuK1Pk&libraries=places,visualization&callback=initMap" defer></script>
+</body>
+</html>
