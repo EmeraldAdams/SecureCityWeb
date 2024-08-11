@@ -11,6 +11,68 @@
 </head>
 
 <body>
+        <form action="Anonymous.html" method="post">
+          <fieldset>
+            <legend>Report Information</legend>
+            <label for="name">Location</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              required
+              placeholder="Table View"
+            />
+            <label for="email">Email (Optional):</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="john@example.com"
+            />
+          </fieldset>
+    
+          <fieldset>
+            <legend>Crime Details</legend>
+            <label for="title">Crime Title:</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              required
+              placeholder="Vechile Theft"
+            />
+            <label for="Type">Crime Type:</label>
+            <select id="type" name="type" required>
+              <option value="">Select Type...</option>
+              <option value="Theft">Theft</option>
+              <option value="Drug">Drug</option>
+              <option value="Abuse">Abuse</option>
+              <option value="Hijacking">Hijacking</option>
+              <option value="Fraud">Fraud</option>
+              <option value="Murder">Murder</option>
+              <option value="other">Other (Please Specify)</option>
+            </select>
+            <label for="description">Crime Description:</label>
+            <textarea
+              id="description"
+              name="description"
+              required
+              cols="50"
+              rows="5"
+              placeholder="Your description will start here..."
+            ></textarea>
+            <label for="image">Upload Image:</label>
+            <input type="file" id="image" name="image" />
+          </fieldset>
+    
+
+          <button type="submit">View Update</button>
+          <button type="submit">Submit Report</button>
+        </form>
+     
+
+
+<!--  
     <div class="container">
         <form action="" id="contactForm">
             <div class="alert">Your message sent</div>
@@ -30,7 +92,7 @@
             </div>
 
             <div class="inputBox">
-                <textarea id="msgContent" cols="100" rows="10" placeholder="Message"></textarea>
+                <textarea id="msgContent" cols="100 rows="100" placeholder="Message"></textarea>
             </div>
 
             <div class="inputBox">
@@ -38,9 +100,7 @@
             </div>
         </form>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
-    <script src="./mail.js"></script>
+-->
 </body>
 
 </html>

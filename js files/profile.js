@@ -21,6 +21,16 @@ const auth = getAuth();
 const db = getFirestore();
 
 onAuthStateChanged(auth, (user)=>{
+    if(user){
+        console.log('user logged in: ', user)
+    }
+    else{
+        console.log('user logged out')
+    }
+})
+
+onAuthStateChanged(auth, (user)=>{
+    console.log(user);
     const loggedInUserId = localStorage.getItem('loggedInUserId');
     if(loggedInUserId){
         const docRef = doc(db, "users", loggedInUserId);

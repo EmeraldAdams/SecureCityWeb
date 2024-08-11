@@ -1,4 +1,60 @@
-*{
+form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  fieldset {
+    margin-bottom: 20px;
+  }
+  
+  legend {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  input[type="email"],
+  textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+/*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -100,27 +156,33 @@ body{
 }
 
 /* Dropdown Button */
+/*
 .dropbtn {
-    background-color: #003566;
-    color: white;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: hsl(0, 0%, 100%);
+    color: #444;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
   }
   
-  /* Dropdown button on hover & focus */
+  /* Dropdown button on hover & focus 
   .dropbtn:hover, .dropbtn:focus {
     background-color: #00356649;
-  }
+  }*/
   
-  /* The container <div> - needed to position the dropdown content */
+  /* The container <div> - needed to position the dropdown content 
   .dropdown {
+    
     position: relative;
     display: inline-block;
-  }
+  }*/
   
-  /* Dropdown Content (Hidden by Default) */
+  /* Dropdown Content (Hidden by Default) 
   .dropdown-content {
     display: none;
     position: absolute;
@@ -128,18 +190,20 @@ body{
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
+  }*/
   
-  /* Links inside the dropdown */
+  /* Links inside the dropdown 
   .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
+  }*/
   
-  /* Change color of dropdown links on hover */
+  /* Change color of dropdown links on hover
   .dropdown-content a:hover {background-color: #ddd;}
   
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) 
   .show {display:block;}
+  
+  */

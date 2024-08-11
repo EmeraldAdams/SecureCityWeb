@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-analytics.js";
-  import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js"
+  import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js"
   import {getFirestore, setDoc, doc, getDocs,query, orderBy, startAfter, limit} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js"
 
   // TODO: Add SDKs for Firebase products that you want to use
@@ -23,8 +22,12 @@
   
 //Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db =getFirestore(app);
+const auth = getAuth();
+
+onAuthStateChanged(auth, (user)=>{
+  console.log(user);
+})
 
 function showMessage(message, divId){
   var messageDiv = document.getElementById(divId);
@@ -86,6 +89,7 @@ signIn.addEventListener('click', (event)=>{
 
   signInWithEmailAndPassword(auth, email, password)
   .then((userCredential)=>{
+    console.log(userCredential.user);
     showMessage('login is successful', 'signInMessage');
     const user = userCredential.user;
     localStorage.setItem('loggedInUserId', user.uid);
