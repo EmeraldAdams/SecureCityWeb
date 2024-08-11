@@ -6,40 +6,115 @@
     font-family: "Poppins", sans-serif;
 }
 
-body, html {
-    width: 100%;
+html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
-    padding:0;
 }
 
 #map {
-    width: 100vw;
-    height: 100%; /* Adjust height to account for header */
-    position: relative;
-    top: 65px; /* Adjust to push map below the header */
+    height: 100vh;
+    width: 100%;
+    margin-top: 60px; /* Adjust based on header height */
 }
 
-/* Header styling */
 .header {
-    display: flex;
-    align-items: center;
-    background: #001D3D;
-    color: #fff;
-    padding: 0 20px;
-    height: 80px;
-    position: fixed;
-    width: 100%;
+    position: fixed; /* Fixed positioning to keep it at the top */
     top: 0;
-    z-index: 100;  /* Ensure this is higher than the sidebar's z-index */
+    left: 0;
+    width: 100%;
+    background-color: #002A5A;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000; /* Ensure it sits above other content */
 }
 
-/* Flex container to handle alignment */
-.header-content {
+.menu-icon {
+    cursor: pointer;
+}
+
+.header-left .controls {
+    width: 100%;
+    max-width: 1000px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+.header-right {
     display: flex;
     align-items: center;
-    width: 100%;
-    position: relative; /* Make sure it can position children properly */
 }
+
+.header-right h1 {
+    margin: 0;
+    margin-right: 15px;
+}
+
+#pac-input {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #002A5A;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebutton {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Adjust the controls container if needed */
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    width: 80%;
+    top: 80px; /* Align this with the bottom of your header */
+    right: 0;
+    z-index: 99;
+    background-color: #ffffff;
+}
+
+/* Ensure proper spacing around the header */
+body {
+    padding-top: 0px; /* Adjust based on header height */
+}
+
 
 .controls-container {
     display: flex;
@@ -54,29 +129,9 @@ body, html {
     background-color: #ffffff;  /* Semi-transparent or match your design */
 }
 
-#map {
-    position: relative;
-    top: 130px; /* Adjust this value based on the total height of header and controls */
-    width: 100vw;
-    height: calc(100% - 130px); /* Adjust based on the total height of header and controls */
-}
 
-/* Menu button styling */
-.menu-button {
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #fff; /* Ensure text color is visible */
-    margin-right: auto; /* Moves the menu button to the left */
-    margin-top: auto;
-}
 
-/* Title styling */
-.header-title {
-    font-size: 1.8rem;
-    margin-left: auto; /* Moves the title to the right */
-}
 
-/* Search box styling */
 
 #pac-input {
     margin: 10px;
@@ -86,54 +141,6 @@ body, html {
 
 }
 
-/* Side navigation styling */
-.sidenav {
-    height: 100%;
-   
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #fff;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 0; /* Removed padding here */
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.nav-heading {
-    height: 200px;
-    background-color: #001D3D;
-    color: #f1f1f1;
-}
-
-.sidenav .nav-heading {
-    padding: 16px 32px;
-    font-size: 1.5rem;
-    border-bottom: 1px solid #ccc;
-}
-
-.sidenav a {
-    padding: 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: bolder;
-    font-family:inherit;
-    color: #151414;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
 
 #description {
     font-family: Roboto;
