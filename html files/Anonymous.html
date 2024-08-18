@@ -45,6 +45,12 @@
         <form action="Anonymous.html" method="post">
           <fieldset>
             <legend>Report Information</legend>
+            <label for="Type">Anonymous/Non-Anonymous:</label>
+            <select id="type" name="type" required>
+              <option value="">Select Type...</option>
+              <option value="Theft">Anonymous</option>
+              <option value="Drug">Non-Anonymous</option>
+            </select>
             <label for="name">Location</label>
             <input
               type="text"
@@ -63,7 +69,7 @@
           </fieldset>
     
           <fieldset>
-            <legend>Crime Details</legend>
+            <legend>Crime Details</legend>         
             <label for="title">Crime Title:</label>
             <input
               type="text"
